@@ -9,6 +9,7 @@
     <version>1.0.1</version>
     <modules>
         <module>batch-import-to-mysql-from-excel</module>
+        <module>swagger2word</module>
     </modules>
     <packaging>pom</packaging>
 
