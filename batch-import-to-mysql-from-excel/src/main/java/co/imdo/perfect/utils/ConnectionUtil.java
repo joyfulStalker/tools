@@ -1,4 +1,4 @@
-package cn.lsl.utils;
+package co.imdo.perfect.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

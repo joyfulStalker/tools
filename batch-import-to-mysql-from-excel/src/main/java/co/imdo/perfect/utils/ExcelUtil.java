@@ -1,4 +1,4 @@
-package cn.lsl.utils;
+package co.imdo.perfect.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
