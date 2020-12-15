@@ -420,6 +420,9 @@ public class WordServiceImpl implements WordService {
         if (modeProperties == null) {
             return null;
         }
+        //必填字段属性
+        List<String> required = (ArrayList)swaggerMap.get(modeName).get("required");
+
         Iterator<Entry<String, Object>> mIt = modeProperties.entrySet().iterator();
 
         List<ModelAttr> attrList = new ArrayList<>();
@@ -429,6 +432,9 @@ public class WordServiceImpl implements WordService {
             Map<String, Object> attrInfoMap = (Map<String, Object>) mEntry.getValue();
             ModelAttr child = new ModelAttr();
             child.setName(mEntry.getKey());
+            if (!CollectionUtils.isEmpty(required) && required.contains(mEntry.getKey())){
+                child.setRequire(true);
+            }
             child.setType((String) attrInfoMap.get("type"));
             if (attrInfoMap.get("format") != null) {
                 child.setType(child.getType() + "(" + attrInfoMap.get("format") + ")");
